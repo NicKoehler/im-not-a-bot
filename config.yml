@@ -1,0 +1,6 @@
+token: your token here
+joins_text: Welcome {}, if you are not a bot tap the button below, 
+            otherwise you will be kicked in 30 seconds.
+button: I'M NOT A BOT
+notbot_text: Ok {}, you're not a bot.
+not4u_text: This button is not for you.

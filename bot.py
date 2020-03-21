@@ -21,6 +21,11 @@ from telegram.ext import (Updater, CallbackQueryHandler,
 with open("config.yml", 'r') as ymlfile:
     cfg = yaml.load(ymlfile, Loader=yaml.FullLoader)
 
+# global variable where I'll append the new members IDs
+# temporanely when they join and press the button just
+# so I can verify if they actually pressed the button
+new_members = []
+
 # enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - '
                     '%(levelname)s - %(message)s',
@@ -30,11 +35,6 @@ logger = logging.getLogger(__name__)
 
 # simple function for making bold text in HTML
 def b(s): return f'<b>{s}</b>'
-
-# global variable where I'll append the new members IDs
-# temporanely when they join and press the button just
-# so I can verify if they actually pressed the button
-new_members = []
 
 
 @run_async
@@ -58,7 +58,7 @@ def add_group(update, context):
     restricts the user from doing anything until
     they press the button.
     '''
-    # if someone adds manually more members the 
+    # if someone adds manually more members the
     # function will not trigger itself
     if len(update.message.new_chat_members) > 1:
         return
@@ -76,8 +76,9 @@ def add_group(update, context):
 
         # if the member is not a bot (An actual telegram bot)
         if not member.is_bot:
-            # if the chat type is 'supergroup'
-            # (because you can't restrict members in normal groups using the bot)
+            # if the chat type is 'supergroup',
+            # because you can't restrict members
+            # in normal groups using the bot
             if update.message.chat.type == 'supergroup':
 
                 text = (cfg['joins_text'].format(b(member.first_name)))
@@ -94,10 +95,11 @@ def add_group(update, context):
                 # in the 'joins_text' of the config.yml and using the
                 # keyboard defined in the 'keyboard' variable
                 mess = update.message.reply_text(text, parse_mode='HTML',
-                                                reply_markup=keyboard)
+                                                 reply_markup=keyboard)
 
                 # this function, as every function, runs in a separate thread
-                wait(cfg['time_kick'], member.id, context, chat_id, mess.message_id)
+                wait(cfg['time_kick'], member.id,
+                     context, chat_id, mess.message_id)
 
 
 @run_async

@@ -1,10 +1,10 @@
-# insert yout token below
+# insert your token below
 token: your token here
 
 # change the time before the user get kicked (seconds)
 time_kick: 30
 
-# message that is sended when to the user that joins
+# message that is sent to the user that joins
 joins_text: Welcome {}, if you're not a bot, tap the button below, 
             otherwise you will be kicked in 30 seconds.
 

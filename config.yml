@@ -1,7 +1,7 @@
 # insert your token below
 token: your token here
 
-# change the time before the user get kicked (seconds)
+# change the time before the user gets kicked (in seconds)
 time_kick: 30
 
 # message that is sent to the user that joins
@@ -14,6 +14,6 @@ button: I'M NOT A BOT
 # the first message will be changed with this
 notbot_text: Ok {}, you're not a bot.
 
-# text prompted to a user if press the button 
-# and is not the on who joined the group
+# text prompted if they press the button
+# and they aren't the one who joined the group
 not4u_text: This button is not for you.

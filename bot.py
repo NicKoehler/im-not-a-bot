@@ -58,40 +58,45 @@ def add_group(update, context):
     restricts the user form do anything if it
     doesn't press the button 'I'M NOT A BOT'
     '''
-    # defining chat_id and new member object
-    chat_id = update.effective_chat.id
-    member = update.message.new_chat_members[0]
+    # if someone adds manually more members the 
+    # function will not triggers itself
+    if len(update.message.new_chat_members) > 1:
+        return
+    else:
+        # defining chat_id and new member object
+        chat_id = update.effective_chat.id
+        member = update.message.new_chat_members[0]
 
-    # defining a button and adding it to the keyboard
-    # the callback is the actual member id converted as string type
-    # because telegram doesn't allow ints
-    no_but = [InlineKeyboardButton(
-        text=cfg['button'], callback_data=str(member.id))]
-    keyboard = InlineKeyboardMarkup([no_but])
+        # defining a button and adding it to the keyboard
+        # the callback is the actual member id converted as string type
+        # because telegram doesn't allow ints
+        no_but = [InlineKeyboardButton(
+            text=cfg['button'], callback_data=str(member.id))]
+        keyboard = InlineKeyboardMarkup([no_but])
 
-    # if the member is not a bot (An actual telegram bot)
-    if not member.is_bot:
-        # if the chat type is 'supergroup'
-        # (because you can't restrict members in normal groups using the bot)
-        if update.message.chat.type == 'supergroup':
+        # if the member is not a bot (An actual telegram bot)
+        if not member.is_bot:
+            # if the chat type is 'supergroup'
+            # (because you can't restrict members in normal groups using the bot)
+            if update.message.chat.type == 'supergroup':
 
-            text = (cfg['joins_text'].format(b(member.first_name)))
+                text = (cfg['joins_text'].format(b(member.first_name)))
 
-            # this restrict the user from doing everything
-            context.bot.restrict_chat_member(
-                chat_id, member.id, ChatPermissions(
-                    can_send_messages=False,
-                    can_send_media_messages=False,
-                    can_send_other_messages=False,
-                    can_add_web_page_previews=False))
+                # this restrict the user from doing everything
+                context.bot.restrict_chat_member(
+                    chat_id, member.id, ChatPermissions(
+                        can_send_messages=False,
+                        can_send_media_messages=False,
+                        can_send_other_messages=False,
+                        can_add_web_page_previews=False))
 
-            # reply to the user join with the text defined before and
-            # using the keyboard defined before.
-            mess = update.message.reply_text(text, parse_mode='HTML',
-                                             reply_markup=keyboard)
+                # reply to the user join with the text defined before and
+                # using the keyboard defined before.
+                mess = update.message.reply_text(text, parse_mode='HTML',
+                                                reply_markup=keyboard)
 
-            # this function, as every function, rus at a separate thread
-            wait(30, member.id, context, chat_id, mess.message_id)
+                # this function, as every function, rus at a separate thread
+                wait(cfg['time_kick'], member.id, context, chat_id, mess.message_id)
 
 
 @run_async

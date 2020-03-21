@@ -1,6 +1,18 @@
+# insert yout token below
 token: your token here
+# change the time before the user get kicked (seconds)
+time_kick: 30
+
+# message that is sended when to the user that joins
 joins_text: Welcome {}, if you are not a bot tap the button below, 
             otherwise you will be kicked in 30 seconds.
+
+# text in the button attached to the first message
 button: I'M NOT A BOT
+
+# the first message will be changed with this
 notbot_text: Ok {}, you're not a bot.
+
+# text prompted to a user if press the button 
+# and is not the on who joined the group
 not4u_text: This button is not for you.

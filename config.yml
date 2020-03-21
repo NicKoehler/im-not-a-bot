@@ -5,7 +5,7 @@ token: your token here
 time_kick: 30
 
 # message that is sended when to the user that joins
-joins_text: Welcome {}, if you are not a bot tap the button below, 
+joins_text: Welcome {}, if you're not a bot, tap the button below, 
             otherwise you will be kicked in 30 seconds.
 
 # text in the button attached to the first message

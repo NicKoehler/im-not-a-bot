@@ -77,13 +77,6 @@ where you see the curly bracket it will be insert the name of the person that jo
 Starting
 ============
 
-Open the powershell or whatever shell you want,
-navigate to the bot root:
-
-.. code:: shell
-
-    $ cd im-not-a-bot
-
 Start the bot with:
 
 .. code:: shell

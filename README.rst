@@ -52,7 +52,7 @@ Then install the requirements:
 Configure
 ============
 
-the first thing you need to do it's **create a telegram bot** using the `BotFather <https://t.me/botfather>`_ and get the **bot token**.
+The first thing you need to do it's **create a telegram bot** using the `BotFather <https://t.me/botfather>`_ and get the **bot token**.
 
 To configure the bot just **open the config.yml file
 and insert your token** (without double quotes or single quotes).
@@ -63,7 +63,7 @@ and insert your token** (without double quotes or single quotes).
 
 *optional:*
 
-changing the text in the bot
+Changing the text in the bot.
 
 *example*:
 
@@ -71,7 +71,7 @@ changing the text in the bot
 
     notbot_text: Ok {}, you're not a bot.
 
-where you see the curly bracket it will be insert the name of the person that joins the group.
+Where you see the curly bracket, the name of the person that joins the group it will be inserted.
 
 ============
 Starting
@@ -83,6 +83,6 @@ Start the bot with:
 
     $ python bot.py
 
-Now you can add you bot to a supergroup and make it administrator.
+Now you can add your bot to a supergroup and make it administrator.
 
-**Done**, now when someone joins the group he will be restricted and prompted to press the button to confirm that he's not a bot.
+**Done**, now when someone joins the group they will be restricted and prompted to press the button to confirm that they are not a bot.

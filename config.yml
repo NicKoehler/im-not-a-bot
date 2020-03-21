@@ -1,5 +1,6 @@
 # insert yout token below
 token: your token here
+
 # change the time before the user get kicked (seconds)
 time_kick: 30
 

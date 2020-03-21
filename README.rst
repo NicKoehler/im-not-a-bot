@@ -45,6 +45,7 @@ Then install the requirements:
 
 .. code:: shell
 
+    $ cd im-not-a-bot
     $ pip install -r requirements.txt
 
 ============

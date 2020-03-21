@@ -29,9 +29,13 @@ Installing
 
 Install im-not-a-bot cloning this repo:
 
+.. code:: shell
+
     $ git clone https://github.com/NicKoehler/im-not-a-bot
 
 Then install the requirements:
+
+.. code:: shell
 
     $ pip install -r requirements.txt
 
@@ -43,13 +47,17 @@ the first thing you need to do it's **create a telegram bot using the `bot fathe
 To configure the bot just **open the config.yml file
 and insert your token** (without double quotes or single quotes).
 
+.. code:: yml
+
     token: your token here
 
-<i>optional:</i>
+*optional:*
 
 changing the text in the bot
 
-<i>example</i>:
+*example*:
+
+.. code:: yml
 
     notbot_text: Ok {}, you're not a bot.
 
@@ -61,9 +69,13 @@ Starting
 Open the powershell or whatever shell you want,
 navigate to the bot root:
 
+.. code:: shell
+
     $ cd im-not-a-bot
 
 Start the bot with:
+
+.. code:: shell
 
     $ python bot.py
 

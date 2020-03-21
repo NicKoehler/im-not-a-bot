@@ -16,9 +16,11 @@ Sections
 ============
 Introduction
 ============
+I'm a python beginner, so please don't be mad at my code 😂
+
 
 I'M SORRY FOR MY ENGLISH ON THIS PROJECT, **I'M ITALIAN** AND I CAN'T WRITE ENGLISH PERFECTLY.
-IF YOU FIND TYPOS, ECC YOU CAN `CONTACT ME <https://t.me/nickoehler>`_.
+IF YOU FIND TYPOS, OR ANYTHING ELSE YOU CAN `CONTACT ME <https://t.me/nickoehler>`_.
 
 This bot it's just a simple implementation of
 a captcha for everyone that joins a telegram group.
@@ -45,7 +47,7 @@ Then install the requirements:
 Configure
 ============
 
-the first thing you need to do it's **create a telegram bot** using the `bot father <https://t.me/botfather>`_ and get the **bot token**.
+the first thing you need to do it's **create a telegram bot** using the `BotFather <https://t.me/botfather>`_ and get the **bot token**.
 
 To configure the bot just **open the config.yml file
 and insert your token** (without double quotes or single quotes).

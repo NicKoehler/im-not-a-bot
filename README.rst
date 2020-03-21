@@ -1,4 +1,4 @@
-.. image:: https://github.com/NicKoehler/im-not-a-bot/blob/master/logo/im-not-a-bot.png?raw=true
+.. image:: https://github.com/NicKoehler/im-not-a-bot/blob/master/images/logo.png?raw=true
    :align: center
    :alt: im-not-a-bot Logo
 ===============
@@ -26,6 +26,10 @@ This bot it's just a simple implementation of
 a captcha for everyone that joins a telegram group.
 
 Tested only with python 3.7
+
+.. image:: https://github.com/NicKoehler/im-not-a-bot/blob/master/images/screen_1.png?raw=true
+   :align: center
+   :alt: im-not-a-bot Logo
 
 ============
 Installing

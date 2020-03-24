@@ -114,9 +114,11 @@ def wait(time, member_id, context, chat_id, message_id):
 
     # if the member is in the global list of
     # new members (meaning they pressed the button)
-    # just return because there is nothing to do
+    # remove they from the list
     if member_id in new_members:
+        new_members.remove(member_id)
         return
+
     # if the member isn't in the global list of
     # new members (meaning they didn't press the button)
     # they will be kicked and the message deleted
@@ -139,9 +141,6 @@ def catching_callbacks(update, context):
     # callback clicks the button
     if member == clicked:
 
-        # adding the member in the global variable
-        new_members.append(member)
-
         # removing the restrictions of the member
         context.bot.restrict_chat_member(
             chat_id, member, ChatPermissions(
@@ -154,6 +153,9 @@ def catching_callbacks(update, context):
         # the user that everything is ok
         mess = update.callback_query.edit_message_text(
             cfg['notbot_text'].format(b(name)), parse_mode='HTML')
+
+        # adding the member in the global variable
+        new_members.append(member)
 
         # waiting 10 seconds and deleting the message itself
         sleep(10)

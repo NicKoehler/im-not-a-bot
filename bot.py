@@ -6,7 +6,7 @@ I'M NOT A BOT.
 This bot it's just a simple implementation of
 a captcha for everyone that joins a telegram group.
 '''
-
+import html
 import yaml
 import logging
 from time import sleep
@@ -34,7 +34,7 @@ logger = logging.getLogger(__name__)
 
 
 # simple function for making bold text in HTML
-def b(s): return f'<b>{s}</b>'
+def b(s): return f'<b>{html.escape(s)}</b>'
 
 
 @run_async
